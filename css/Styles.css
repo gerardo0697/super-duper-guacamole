@@ -1,0 +1,561 @@
+
+/* En tu archivo Styles.css */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .counter {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.counter.visible {
+    opacity: 1;
+}
+
+
+/* Estilos generales del logo */
+.navbar-brand img {
+    max-width: 150px;  /* Tamaño estándar del logo */
+    height: auto;      /* Mantiene la proporción */
+}
+
+/* Estilos del preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f9fa; /* Fondo gris claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Imagen del preloader con animación de escalado */
+.preloader-img {
+    width: 100px; /* Ajusta el tamaño inicial de la imagen */
+    height: auto;
+    animation: scaleLoop 1.5s ease-in-out infinite; /* Aplicar animación de escalado en bucle */
+}
+
+/* Ocultar el preloader una vez que la página ha cargado */
+.loaded #preloader {
+    display: none;
+}
+
+/* Animación de escalado en bucle */
+@keyframes scaleLoop {
+    0%, 100% {
+        transform: scale(1); /* Tamaño original */
+    }
+    50% {
+        transform: scale(1.2); /* Tamaño agrandado */
+    }
+}
+
+/* Estilos para el contenedor de la imagen emergente */
+.hidden-element {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* Estilo para la imagen de la notificación */
+.notification-image {
+    max-width: 97%;
+    max-height: 80%;
+    object-fit: contain;
+    cursor: default;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+  
+
+/* Botones flotantes de redes sociales */
+.social-icons {
+    position: fixed; /* Mantener en posición fija por defecto */
+    right: 10px; /* Espacio desde el borde derecho de la pantalla */
+    top: 40%; /* Alineado verticalmente al centro */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los íconos */
+    z-index: 1000; /* Asegura que estén encima de otros elementos */
+}
+
+/* Estilo base para los íconos redondos */
+.social-icons a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%; /* Hacer los íconos redondos */
+    background-color: #3b5998; /* Color de fondo inicial (Facebook) */
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    transition: background-color 0.3s;
+}
+/* Efecto hover general */
+.social-icons a:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+}
+
+/* Facebook */
+.facebook {
+    background-color: #3b5998; /* Color inicial de Facebook */
+}
+
+.facebook:hover {
+    background-color: #2d4373; /* Color de hover para Facebook */
+}
+
+/* Instagram */
+.instagram {
+    background-color: #e4405f; /* Color inicial de Instagram */
+}
+
+.instagram:hover {
+    background-color: #bc2a8d; /* Color de hover para Instagram */
+}
+
+/* WhatsApp */
+.whatsapp {
+    background-color: #25d366; /* Color inicial de WhatsApp */
+}
+
+.whatsapp:hover {
+    background-color: #1ebe57; /* Color de hover para WhatsApp */
+}
+
+/* Grilla de las tarjetas */
+/*css del primer contenedor*/
+
+.cards-grid1 {
+    margin: 0 auto; /* Centrar el contenedor principal */
+}
+
+
+.first-container1 {
+    padding: 2px; /* Espaciado alrededor del contenedor */
+}
+
+/* Estilos específicos para cada tarjeta */
+.card {
+    transition: transform 0.2s; /* Efecto de hover */
+}
+.custom-card-background {
+    background-color: #0B2538;
+}
+.custom-card-round {
+    border-radius: 20%;
+    overflow: hidden;
+}  
+.custom-card-text {
+    color: white;
+}
+.custom-img-small {
+    width: 50% !important; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto; /* Centra la imagen y añade un margen inferior de 20px */
+}
+.card-title1{
+    color: white;
+}
+.custom-card-text1{
+    color: white;
+}
+
+
+.card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la card un 5% */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+ 
+
+
+
+
+
+
+
+/* Segundo Contenedor */
+
+.custom-container {
+    background-color: #f0f0f0; /* Fondo gris pálido */
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .custom-item {
+    background-color: #ffffff; /* Fondo blanco para los objetos */
+    border-radius: 8px;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .custom-item:hover {
+    background-color: #e9ecef; /* Cambia el color de fondo al pasar el mouse */
+  }
+
+  /* Animación de vibración para los íconos */
+  .custom-item:hover .custom-icon {
+    animation: vibrate 0.2s linear infinite;
+  }
+
+  @keyframes vibrate {
+    0% { transform: translate(0); }
+    25% { transform: translate(1px, -1px); }
+    50% { transform: translate(-1px, 1px); }
+    75% { transform: translate(1px, 1px); }
+    100% { transform: translate(-1px, -1px); }
+  }
+
+  .custom-icon {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+    transition: transform 0.2s;
+  }
+
+  .custom-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .custom-text {
+    font-size: 1rem;
+  }
+
+/* termina segundo contenedor*/
+
+
+/* Estilos responsivos */
+
+
+
+/* Media query para pantallas específicas como el iPhone 5 */
+@media (max-width: 320px) {
+    .custom-card-3 {
+        min-height: 300px !important;
+        overflow: visible !important; /* Asegura que el contenido se muestre */
+        white-space: normal !important; /* Permite que el texto se envuelva */
+        
+    }
+    .card-title1{
+        font-size: 12px !important; /* Tamaño de texto más pequeño */
+        justify-items: center;
+        padding: none;
+        margin: none;
+    }
+    .custom-title {
+        word-wrap: break-word ;
+        margin: 0px;
+    }    
+    .custom-card-text1 {
+        font-size: 12px !important;
+    }
+    .card{
+        min-width: 145px;
+    }
+    
+}
+@media (min-width: 320px) and (max-width: 390px){
+    .navbar-brand img {
+        max-width: 100px; /* Logo más pequeño en móviles */
+    }
+    .card-title1{
+        font-size: 16px; /* Tamaño de texto más pequeño */
+        justify-items: center;
+        padding: none;
+        margin: none;
+    }
+
+    .social-icons {
+        position: static; /* Colocar debajo de las tarjetas */
+        flex-direction: row; /* Íconos en fila */
+        justify-content: center;
+        margin-top: 10px; /* Espacio superior para separación */
+        margin-bottom: 20px; /* Espacio inferior para separación */
+    }
+
+    .social-icons a {
+        width: 40px; /* Iconos más pequeños */
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+    }
+    .card {
+        max-height: 190px;
+        max-width: 100%; /* Asegura que las tarjetas no se desborden */
+        overflow: hidden; /* Ocultar cualquier contenido que sobresalga */
+        padding: 10px; /* Reducir el padding en móviles */
+        
+        
+    }
+
+    .custom-img-small {
+        width: 70%; /* Ajustar el tamaño de la imagen en móviles */
+        margin-top: 10px !important;
+        
+    }
+
+    .card img {
+        height: auto; /* Mantener proporción */
+        max-width: 100%; /* Asegura que la imagen no se desborde */
+    }
+    .custom-card-text1 {
+        font-size: 14px ;
+    }
+    .custom-card-3 {
+        min-height: 300px !important;
+        overflow: visible !important; /* Asegura que el contenido se muestre */
+        white-space: normal !important; /* Permite que el texto se envuelva */
+        
+    }
+    
+    
+
+}
+
+@media (min-width: 391px) and (max-width: 500px){
+    .navbar-brand img {
+        max-width: 100px; /* Logo más pequeño en móviles */
+    }
+    .card-title1{
+        font-size: 16px; /* Tamaño de texto más pequeño */
+        
+        padding: none;
+        margin: none;
+    }
+
+    .social-icons {
+        position: static; /* Colocar debajo de las tarjetas */
+        flex-direction: row; /* Íconos en fila */
+        justify-content: center;
+        margin-top: 10px; /* Espacio superior para separación */
+        margin-bottom: 20px; /* Espacio inferior para separación */
+    }
+
+    .social-icons a {
+        width: 40px; /* Iconos más pequeños */
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+    }
+    .card {
+        height: auto;
+        max-width: 100%; /* Asegura que las tarjetas no se desborden */
+        overflow: hidden; /* Ocultar cualquier contenido que sobresalga */
+        padding: 10px; /* Reducir el padding en móviles */
+        
+    }
+ 
+
+    .custom-img-small {
+        width: 70%; /* Ajustar el tamaño de la imagen en móviles */
+        margin-top: 20px !important;
+    }
+
+    .card img {
+        height: auto; /* Mantener proporción */
+        max-width: 100%; /* Asegura que la imagen no se desborde */
+    }
+    .custom-card-text1 {
+        font-size: 16px !important;
+    }
+   
+}
+
+/* Pantallas medianas (tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .navbar-brand img {
+        max-width: 120px; /* Tamaño del logo en tablets */
+    }
+    .card-title1{
+        font-size: 18px; /* Tamaño de texto más pequeño */
+        
+        padding: none;
+        margin: none;
+    }
+
+    .social-icons {
+        right: 10px; /* Mantener el posicionamiento fijo */
+        top: 40%; /* Alineado vertical */
+    }
+
+    .social-icons a {
+        width: 45px; /* Iconos un poco más grandes */
+        height: 45px;
+        line-height: 45px;
+        font-size: 22px;
+    }
+    .card {
+        height: auto; /* Permitir que las tarjetas se ajusten automáticamente */
+        max-width: 100%; /* Asegura que las tarjetas no se desborden */
+        overflow: hidden; /* Ocultar cualquier contenido que sobresalga */
+        padding: 10px; /* Reducir el padding en móviles */
+    }
+
+    .custom-img-small {
+        width: 70%; /* Ajustar el tamaño de la imagen en móviles */
+    }
+
+    .card img {
+        height: auto; /* Mantener proporción */
+        max-width: 100%; /* Asegura que la imagen no se desborde */
+    }
+    .custom-card-text1 {
+        font-size: 18px !important;
+    }
+
+
+}
+
+/* Pantallas grandes (desktops medianos) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .navbar-brand img {
+        max-width: 140px; /* Logo para laptops/desktops medianos */
+    }
+    .cards-grid1 .col-12 {
+        margin-bottom: 5px; /* Espaciado entre tarjetas en pantallas pequeñas */
+        min-width: 250px;
+    }
+    .card-title1{
+        font-size: 18px; /* Tamaño de texto más pequeño */
+        
+        padding: none;
+        margin: none;
+    }
+    .card {
+        height: auto; /* Permitir que las tarjetas se ajusten automáticamente */
+        max-width: 100%; /* Asegura que las tarjetas no se desborden */
+        overflow: hidden; /* Ocultar cualquier contenido que sobresalga */
+        padding: 10px; /* Reducir el padding en móviles */
+    }
+
+    .custom-img-small {
+        width: 70%; /* Ajustar el tamaño de la imagen en móviles */
+    }
+
+    .card img {
+        height: auto; /* Mantener proporción */
+        max-width: 100%; /* Asegura que la imagen no se desborde */
+    }
+    .custom-card-text1 {
+        font-size: 18px !important;
+    }
+
+
+}
+
+/* Pantallas grandes (desktops grandes) */
+@media (min-width: 1280px) {
+    .navbar-brand img {
+        max-width: 150px; /* Tamaño estándar en desktops grandes */
+    }
+    .cards-grid1 .col-lg-3 {
+        margin-bottom: 20px; /* Espaciado entre tarjetas en pantallas muy grandes */
+    }
+    .card-title1{
+        word-wrap: break-word;
+        padding: none;
+        margin: none;
+        font-size: 18px; /* Tamaño de texto más pequeño */
+    }
+    .card {
+        height: auto; /* Permitir que las tarjetas se ajusten automáticamente */
+        max-width: 100%; /* Asegura que las tarjetas no se desborden */
+        overflow: hidden; /* Ocultar cualquier contenido que sobresalga */
+        padding: 10px; /* Reducir el padding en móviles */
+    }
+
+    .custom-img-small {
+        width: 70%; /* Ajustar el tamaño de la imagen en móviles */
+    }
+
+    .card img {
+        height: auto; /* Mantener proporción */
+        max-width: 100%; /* Asegura que la imagen no se desborde */
+    }
+    .custom-card-text1 {
+        font-size: 18px !important;
+    }
+
+ 
+}
+
+/* Pantallas muy grandes (desktops amplios) */
+@media (min-width: 1281px) {
+    .navbar-brand img {
+        max-width: 180px; /* Tamaño más grande en pantallas muy grandes */
+    }
+    
+    .cards-grid1 .col-lg-3 {
+        margin-bottom: 20px; /* Espaciado entre tarjetas en pantallas muy grandes */
+    }
+    .card-title1{
+        padding: none;
+        margin: none;
+        font-size: 24px;
+    }
+    .card {
+        height: auto; /* Permitir que las tarjetas se ajusten automáticamente */
+        max-width: 100%; /* Asegura que las tarjetas no se desborden */
+        overflow: hidden; /* Ocultar cualquier contenido que sobresalga */
+        padding: 10px; /* Reducir el padding en móviles */
+    }
+
+    .custom-img-small {
+        width: 70%; /* Ajustar el tamaño de la imagen en móviles */
+    }
+
+    .card img {
+        height: auto; /* Mantener proporción */
+        max-width: 100%; /* Asegura que la imagen no se desborde */
+    }
+    .custom-card-text1 {
+        font-size: 24px !important;
+    }
+
+}
+
+.footer-title {
+    font-size: 1.1rem; /* Ajusta el tamaño del título */
+}
+
+footer p {
+    font-size: 0.9rem; /* Tamaño de texto más pequeño */
+}
+
+footer .small-text {
+    font-size: 0.8rem; /* Tamaño del texto para los derechos reservados */
+}
+
+

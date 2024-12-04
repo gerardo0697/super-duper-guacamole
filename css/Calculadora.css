@@ -1,0 +1,300 @@
+/* General Styles */
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    background-color: #054c09;
+    color: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fija el navbar al tope */
+    top: 0;
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+}
+
+/* Logo */
+.navbar-brand img {
+    max-width: 150px; /* Tamaño estándar del logo */
+    height: auto; /* Mantiene la proporción */
+}
+
+/* Social Icons */
+.social-icons {
+    position: fixed; /* Mantener en posición fija por defecto */
+    right: 10px; /* Espacio desde el borde derecho de la pantalla */
+    top: 40%; /* Alineado verticalmente al centro */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los íconos */
+    z-index: 1000; /* Asegura que estén encima de otros elementos */
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%; /* Hacer los íconos redondos */
+    background-color: #3b5998; /* Color inicial (Facebook) */
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.facebook:hover {
+    background-color: #2d4373;
+}
+
+.instagram {
+    background-color: #e4405f;
+}
+
+.instagram:hover {
+    background-color: #bc2a8d;
+}
+
+.whatsapp {
+    background-color: #25d366;
+}
+
+.whatsapp:hover {
+    background-color: #1ebe57;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: #054c09;
+    color: white;
+    padding: 15px 0;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: auto !important; /* Empuja el footer hacia abajo */
+}
+
+/* Main Content */
+main.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 80px; /* Espacio superior para evitar ocultarse bajo el navbar */
+}
+
+/* Card Styles */
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 100%; /* Ajustar al contenedor */
+    max-width: 320px;
+    transition: width 0.3s ease;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #054c09;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #054c09;
+}
+
+.input-group select {
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"%3E%3Cpath fill="%23054c09" d="M5 7L0 2h10z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+    cursor: pointer;
+}
+
+.input-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #054c09;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-group button:hover {
+    background-color: #067f0f;
+}
+
+/* Result Card */
+.result-card {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-card p {
+    font-size: 1em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.result-card span {
+    font-weight: bold;
+    color: #054c09;
+}
+
+
+/* Tooltip base */
+.result-card .tooltip {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 12px; /* Más espacio para el texto */
+    border-radius: 5px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    white-space: normal; /* Permite saltos de línea */
+    max-width: 250px; /* Limita el ancho máximo */
+    word-wrap: break-word; /* Ajusta palabras largas */
+    overflow-wrap: break-word; /* Soporte adicional para palabras largas */
+    transform: translateY(-5px); /* Ajuste inicial */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Ajuste dinámico para posicionar correctamente el tooltip */
+.result-card .tooltip {
+    top: 30px; /* Coloca el tooltip más cerca del texto */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%) translateY(0); /* Ajuste inicial */
+}
+
+/* Triángulo indicador */
+.result-card .tooltip::after {
+    content: ''; /* Triángulo visual */
+    position: absolute;
+    top: 100%; /* Triángulo justo debajo del tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+/* Mostrar tooltip al pasar el mouse */
+.result-card p:hover .tooltip {
+    display: block; /* Muestra el tooltip */
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px); /* Flota ligeramente hacia abajo */
+}
+
+/* Evitar desbordes del tooltip fuera de la pantalla */
+.result-card {
+    position: relative; /* Contenedor relativo para posicionar tooltips */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 576px) {
+    .result-card .tooltip {
+        max-width: 90%; /* Ocupa hasta el 90% del ancho de la pantalla */
+        left: 50%; /* Centrado en pantallas pequeñas */
+        transform: translateX(-50%) translateY(0); /* Quita el desplazamiento horizontal */
+    }
+}
+
+
+#downloadImageBtn {
+    position: relative;
+    background-color: white; /* Fondo blanco */
+    color: #E1332D; /* Texto color rojo */
+    font-size: 16px;
+    font-weight: 400;
+    padding: 15px 30px;
+    border: 2px solid transparent; /* Borde transparente para mostrar solo la animación */
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    z-index: 1;
+  }
+  
+  /* Pseudoelemento para el borde "serpiente" */
+  #downloadImageBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--serpent-gradient, linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet));
+    background-size: 400% 400%;
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.4s ease;
+  }
+  
+  /* Al hacer hover, el borde serpiente aparece y comienza a moverse */
+  #downloadImageBtn:hover::before {
+    opacity: 1;
+    animation: serpentBorder 4s linear infinite; /* Activamos la animación */
+  }
+  
+  /* Animación del borde serpenteante */
+  @keyframes serpentBorder {
+    0% {
+      background-position: 400% 0%;
+    }
+    50% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 400% 0%;
+    }
+  }
+  

@@ -1,0 +1,332 @@
+/* Estilos generales del logo */
+.navbar-brand img {
+    max-width: 150px;  /* Tamaño estándar del logo */
+    height: auto;      /* Mantiene la proporción */
+}
+
+.pdf-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #054c09;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    padding-top: 20px;
+}
+
+/* Botones flotantes de redes sociales */
+.social-icons {
+    position: fixed; /* Mantener en posición fija por defecto */
+    right: 10px; /* Espacio desde el borde derecho de la pantalla */
+    top: 40%; /* Alineado verticalmente al centro */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los íconos */
+    z-index: 1000; /* Asegura que estén encima de otros elementos */
+}
+
+/* Estilo base para los íconos redondos */
+.social-icons a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%; /* Hacer los íconos redondos */
+    background-color: #3b5998; /* Color de fondo inicial (Facebook) */
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    transition: background-color 0.3s;
+}
+
+/* Cambiar el color cuando se pasa el cursor por encima */
+/* Efecto hover general */
+.social-icons a:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+}
+
+/* Facebook */
+.facebook {
+    background-color: #3b5998; /* Color inicial de Facebook */
+}
+
+.facebook:hover {
+    background-color: #2d4373; /* Color de hover para Facebook */
+}
+
+/* Instagram */
+.instagram {
+    background-color: #e4405f; /* Color inicial de Instagram */
+}
+
+.instagram:hover {
+    background-color: #bc2a8d; /* Color de hover para Instagram */
+}
+
+/* WhatsApp */
+.whatsapp {
+    background-color: #25d366; /* Color inicial de WhatsApp */
+}
+
+.whatsapp:hover {
+    background-color: #1ebe57; /* Color de hover para WhatsApp */
+}
+
+/* Estilos de las cards (tarjetas) */
+.pdf-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Tarjeta individual */
+.pdf-card {
+    background-color: #3b5998;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto; /* Ancho automático para adaptarse */
+    height: 900px; /* Altura automática */
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: column; /* Flex para alinear contenido en columna */
+    justify-content: space-between; /* Botón en la parte inferior */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pdf-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-card iframe {
+    width: 100%; /* El PDF se ajusta al 100% del ancho de la tarjeta */
+    height: 900px !important; /* Altura para pantallas grandes */
+    margin-bottom: 15px; /* Espacio entre el PDF y el botón */
+}
+
+/* Botón dentro de la tarjeta */
+.pdf-card button {
+    background-color:  #E0C023;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pdf-card button:hover {
+    background-color: #04680d;
+}
+
+/* Estilos del visor PDF (modal) */
+.pdf-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Tamaño predeterminado */
+    max-width: 900px; /* Máximo ancho */
+    height: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Iframe que contiene el PDF */
+.pdf-modal iframe {
+    width: 100%;
+    height: 85%;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Botón para cerrar el modal */
+.pdf-modal .close-pdf {
+    background-color:  #E0C023;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.pdf-modal .close-pdf:hover {
+    background-color: #c9302c;
+}
+
+/* Botón para descargar el PDF */
+.pdf-modal .download-pdf {
+    background-color:  #E0C023;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.pdf-modal .download-pdf:hover {
+    background-color: #449d44;
+}
+
+/* Fondo oscuro detrás del modal */
+.pdf-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 900;
+    display: none;
+}
+
+/* Color del texto de los títulos en las cards */
+h3 {
+    color: white;
+}
+
+/* Estilos responsivos */
+
+/* Pantallas grandes (mayores de 1200px) */
+@media (min-width: 1201px) {
+    .pdf-card {
+        width: 90%; /* Ajustar el ancho de las tarjetas al 50% del contenedor */
+        max-width: 1200px; /* Limitar el ancho máximo a 600px */
+        height: 80%; /* Altura automática basada en el contenido */
+        padding: 20px; /* Añadir espacio interno */
+    }
+
+    .pdf-card iframe {
+        height: 500px; /* Reducir la altura del PDF en pantallas grandes */
+    }
+
+    .pdf-modal {
+        width: 80%; /* Modal más amplio */
+        height: 80%; /* Ajuste de la altura del modal */
+    }
+}
+
+/* Pantallas medianas (menores de 1200px) */
+@media (max-width: 1200px) {
+    .pdf-card {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        height: 80%;    }
+
+    .pdf-card iframe {
+        height: 350px; /* Altura ajustada para pantallas medianas */
+    }
+
+    .pdf-modal {
+        width: 90%; /* Modal más amplio */
+        height: 80%; /* Ajuste de la altura del modal */
+        margin-top: 100px;
+    }
+}
+
+/* Pantallas pequeñas (menores de 768px) */
+@media (max-width: 768px) {
+    .pdf-card {
+        width: 100%; /* La tarjeta ocupa todo el ancho */
+        height: 80%;
+    }
+
+    .pdf-card iframe {
+        height: 300px; /* Altura ajustada para pantallas pequeñas */
+    }
+
+    .pdf-modal {
+        width: 95%; /* Modal más grande en pantallas pequeñas */
+        height: 85%;
+    }
+
+    .pdf-card h3 {
+        font-size: 1rem; /* Título más pequeño */
+    }
+
+    .pdf-card button {
+        font-size: 0.9rem; /* Texto del botón más pequeño */
+    }
+}
+
+/* Pantallas extra pequeñas (menores de 480px) */
+@media (max-width: 480px) {
+    .pdf-card {
+        padding: 10px; /* Menos padding para pantallas muy pequeñas */
+    }
+
+    .pdf-card iframe {
+        height: 250px; /* Altura reducida para pantallas muy pequeñas */
+    }
+}
+
+/* Estilo base para el iframe y la imagen de vista previa */
+.pdf-frame-computer {
+    display: none; /* Oculta el iframe por defecto */
+    width: 100%;
+    height: 300px; /* Ajusta el tamaño del iframe */
+}
+
+.pdf-preview {
+    display: block; /* Muestra la imagen de vista previa por defecto */
+    width: 100%;
+    height: auto; /* Mantiene la proporción */
+}
+
+/* Mostrar el iframe solo en computadoras */
+@media (min-width: 768px) {
+    .pdf-preview {
+        display: none; /* Oculta la imagen de vista previa en pantallas grandes */
+    }
+    .pdf-frame-computer {
+        display: block; /* Muestra el iframe en pantallas grandes */
+    }
+}
+
+/* Asegúrate de que el iframe esté oculto en pantallas más pequeñas */
+@media (max-width: 767px) {
+    .pdf-frame-computer {
+        display: none; /* Asegúrate de que el iframe no se muestre en teléfonos */
+    }
+}
+
+/* Asegurarse de que el body ocupe el 100% de la altura */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal para empujar el footer */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+}
+
+/* El contenido debe crecer para llenar el espacio */
+.container {
+    flex: 1;
+}
+
+/* Footer fijo al fondo */
+footer {
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}

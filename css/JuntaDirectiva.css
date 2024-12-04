@@ -1,0 +1,133 @@
+/* Estilos generales del logo */
+.navbar-brand img {
+    max-width: 150px;  /* Tamaño estándar del logo */
+    height: auto;      /* Mantiene la proporción */
+}
+main {
+    margin-top: 300px !important; /* Ajusta el valor según lo que necesites */
+  }
+  
+.pdf-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #054c09;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+
+/* Animación de caída desde arriba */
+.animated-card {
+    animation: slideDown 0.5s ease-in-out forwards; /* Agrega 'forwards' para mantener el estado final */
+    opacity: 0; /* Inicialmente invisible */
+  }
+  
+  /* Retrasos en la animación para cada tarjeta */
+  .animated-card:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  
+  .animated-card:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  
+  .animated-card:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%); /* Caer desde arriba */
+      opacity: 0; /* Comienza invisible */
+    }
+    to {
+      transform: translateY(0); /* Termina en su posición original */
+      opacity: 1; /* Termina visible */
+    }
+  }
+  
+  
+  
+  /* Personalización de las tarjetas */
+  .custom-card-background {
+    background-color: #0B2538;
+  }
+  
+  .custom-card-round {
+    border-radius: 10px;
+  }
+  
+  /* Centrando la tarjeta si queda sola en la fila */
+  @media (min-width: 768px) {
+    .row > .col-md-6:nth-child(odd):last-child {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  /* Estilo para la imagen de la card */
+  .card-img-top {
+    object-fit: cover;
+    height: 200px;
+  }
+
+  
+  /* Botones flotantes de redes sociales */
+.social-icons {
+    position: fixed; /* Mantener en posición fija por defecto */
+    right: 10px; /* Espacio desde el borde derecho de la pantalla */
+    top: 40%; /* Alineado verticalmente al centro */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los íconos */
+    z-index: 1000; /* Asegura que estén encima de otros elementos */
+}
+
+/* Estilo base para los íconos redondos */
+.social-icons a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%; /* Hacer los íconos redondos */
+    background-color: #3b5998; /* Color de fondo inicial (Facebook) */
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    transition: background-color 0.3s;
+}
+
+/* Cambiar el color cuando se pasa el cursor por encima */
+/* Efecto hover general */
+.social-icons a:hover {
+  transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+}
+
+/* Facebook */
+.facebook {
+  background-color: #3b5998; /* Color inicial de Facebook */
+}
+
+.facebook:hover {
+  background-color: #2d4373; /* Color de hover para Facebook */
+}
+
+/* Instagram */
+.instagram {
+  background-color: #e4405f; /* Color inicial de Instagram */
+}
+
+.instagram:hover {
+  background-color: #bc2a8d; /* Color de hover para Instagram */
+}
+
+/* WhatsApp */
+.whatsapp {
+  background-color: #25d366; /* Color inicial de WhatsApp */
+}
+
+.whatsapp:hover {
+  background-color: #1ebe57; /* Color de hover para WhatsApp */
+}

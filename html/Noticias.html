@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Internacional de R.L.</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <link rel="stylesheet" href="../css/Noticias.css">
+
+
+</head>
+<body>
+
+  <!-- Header con Nav -->
+<!-- Header con Nav -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container"> <!-- Cambié container-fluid a container -->
+      <!-- Logo en el lado izquierdo -->
+      <a class="navbar-brand" href="../index.html">
+        <img src="../img/logo - copia.png" alt="Logo">
+      </a>
+      
+      <!-- Botón para colapsar el menú en móviles -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+        <!-- Menú de navegación -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/QuienesSomos.html">Quienes Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/Contáctenos.html">Contáctenos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/Noticias.html">Noticias</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <h2 class="pdf-title">Noticias</h2>
+  
+<!-- Main content -->
+<main class="container my-5">
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+            <div class="card" onclick="toggleContent(this)">
+                <img src="https://via.placeholder.com/400" class="card-img-top" alt="...">
+                <div class="card-content">
+                    <div class="card-body">
+                        <h5 class="card-title">Noticia 1</h5>
+                        <p class="card-text card-text-summary">Este es un resumen corto de la noticia 1. Es un texto introductorio para enganchar al lector, pero si es más largo debería mostrarse un botón de "Ver más".</p>
+                        <p class="card-text full-text" style="display: none;">Texto completo Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. Este libro es un tratado sobre la teoría de la ética, muy popular durante el Renacimiento.</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-link show-more">Ver más</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4">
+            <div class="card" onclick="toggleContent(this)">
+                <img src="https://via.placeholder.com/400" class="card-img-top" alt="...">
+                <div class="card-content">
+                    <div class="card-body">
+                        <h5 class="card-title">Noticia 2</h5>
+                        <p class="card-text card-text-summary">Esta noticia tiene más contenido. El texto continúa, y al sobrepasar el límite, aparecerá el botón "Ver más". Al hacer clic, el contenido se expandirá sin modificar la altura estándar de las demás tarjetas.</p>
+                        <p class="card-text full-text" style="display: none;">Aquí va el contenido completo de la noticia 2 que se desplegará al hacer clic en "Ver más".</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-link show-more">Ver más</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+            <div class="card" onclick="toggleContent(this)">
+                <img src="https://via.placeholder.com/400" class="card-img-top" alt="...">
+                <div class="card-content">
+                    <div class="card-body">
+                        <h5 class="card-title">Noticia 3</h5>
+                        <p class="card-text card-text-summary">El contenido de esta tarjeta es</p>
+                        <p class="card-text full-text" style="display: none;">Aquí va el contenido completo de la noticia 3 que se desplegará al hacer clic.</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-link show-more">Ver más</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-4">
+            <div class="card" onclick="toggleContent(this)">
+                <img src="https://via.placeholder.com/400" class="card-img-top" alt="...">
+                <div class="card-content">
+                    <div class="card-body">
+                        <h5 class="card-title">Noticia 4</h5>
+                        <p class="card-text card-text-summary">Resumen de la noticia 4. Contenido interesante que capta la atención del lector.</p>
+                        <p class="card-text full-text" style="display: none;">Texto completo de la noticia 4. Aquí se detalla la información que se revelará al hacer clic.</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-link show-more">Ver más</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-4">
+            <div class="card" onclick="toggleContent(this)">
+                <img src="https://via.placeholder.com/400" class="card-img-top" alt="...">
+                <div class="card-content">
+                    <div class="card-body">
+                        <h5 class="card-title">Noticia 5</h5>
+                        <p class="card-text card-text-summary">Esta es la noticia 5. Un breve resumen que intriga al lector.</p>
+                        <p class="card-text full-text" style="display: none;">Aquí se puede leer el contenido completo de la noticia 5 al hacer clic.</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-link show-more">Ver más</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-4">
+            <div class="card" onclick="toggleContent(this)">
+                <img src="https://via.placeholder.com/400" class="card-img-top" alt="...">
+                <div class="card-content">
+                    <div class="card-body">
+                        <h5 class="card-title">Noticia 6</h5>
+                        <p class="card-text card-text-summary">Resumen de la noticia 6. Aquí va un contenido breve que engancha al lector.</p>
+                        <p class="card-text full-text" style="display: none;">Contenido completo de la noticia 6 que se mostrará al hacer clic.</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-link show-more">Ver más</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+  <!-- Redes Sociales Flotantes -->
+  <div class="social-icons">
+    <a href="https://www.facebook.com/cooperativainternacionaldeRL?mibextid=LQQJ4d&rdid=xQPj7xsLUCdn3Gmc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FESyyzP6G5SMS5YS7%2F%3Fmibextid%3DLQQJ4d" class="facebook" target="_blank" title="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/cooperativainternacionalderl/?igsh=NDdwZ21oeWd4N2Q5" class="instagram" target="_blank" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/75126666" class="whatsapp" target="_blank" title="Chat en WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-4 pb-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="footer-title">-Información General</h5>
+                <p><strong>Dirección:</strong> Centro Comercial Fuentes de Bethoven, Local No 15, 75 Av. Norte Colonia Escalón, San Salvador</p>
+                <p><strong>Teléfono:</strong> (503) 2124-3959 / (503) 7512-6666</p>
+                <p><strong>Email:</strong> <a href="mailto:inversiones@internacional.com.sv" class="text-light">inversiones@internacional.com.sv</a></p>
+            </div>
+            <div class="col-md-6">
+                <h5 class="footer-title">-Para Consulta o Queja</h5>
+                <p>(503) 7600-8688</p>
+                <h5 class="footer-title">-Contáctanos</h5>
+                <p>Lunes a Viernes de 9:00am a 5:00pm (Sin cerrar al mediodía)</p>
+                <p>Sábado de 9:00am a 01:00pm</p>
+                <p>Consulte en WhatsApp al <strong>7512-6666</strong></p>
+                <p>Enviar Email a <strong>Cooperativa.</strong></p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <p class="small-text">© 2024 Internacional de R.L. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS y Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+   <!-- FontAwesome JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+
+  <!-- JavaScript para mostrar/ocultar contenido -->
+  <script src="../JavaScript/Noticias.js"></script>
+
+</body>
+</html>
