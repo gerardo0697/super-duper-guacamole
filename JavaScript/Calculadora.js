@@ -11,7 +11,7 @@ document.getElementById('calculateBtn').addEventListener('click', () => {
     }
 
     // Cálculo del interés simple
-    const earnedValue = (investment * rate * timeInput) / 100;
+    const earnedValue = (investment * rate * 1) / 100;
     const totalInvestment = investment + earnedValue;
 
     // Cálculo del interés compuesto
