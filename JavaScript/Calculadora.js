@@ -32,11 +32,13 @@ document.getElementById('calculateBtn').addEventListener('click', () => {
     document.getElementById('totalCompoundInvestment').textContent = `$${totalCompoundInvestment.toFixed(2)}`;
 
     // Actualizar tooltips con información única
-    document.querySelector('#earnedValue + .tooltip').textContent = 
-        `Interés simple: Con una inversión de $${investment.toFixed(2)} al ${rate}% durante ${timeInput} ${timeUnit === 'years' ? 'año(s)' : 'mes(es)'}, ganarías $${earnedValue.toFixed(2)}.`;
+   // Calculando el interés y el total (suponiendo que ya tienes las variables necesarias)
+document.querySelector('#earnedValue + .tooltip').textContent = 
+`Interés simple: Con una inversión de $${investment.toFixed(2)} al ${rate}% durante 1 año, ganarías $${earnedValue.toFixed(2)}.`;
 
-    document.querySelector('#totalInvestment + .tooltip').textContent = 
-        `Total simple: La inversión inicial ($${investment.toFixed(2)}) más el interés ganado ($${earnedValue.toFixed(2)}) da un total de $${totalInvestment.toFixed(2)}.`;
+document.querySelector('#totalInvestment + .tooltip').textContent = 
+`Total simple: La inversión inicial ($${investment.toFixed(2)}) más el interés ganado ($${earnedValue.toFixed(2)}) da un total de $${totalInvestment.toFixed(2)}.`;
+
 
     document.querySelector('#earnedCompoundValue + .tooltip').textContent = 
         `Interés compuesto: Con una inversión de $${investment.toFixed(2)} al ${rate}% durante ${timeInput} ${timeUnit === 'years' ? 'año(s)' : 'mes(es)'}, ganarías $${earnedCompoundValue.toFixed(2)}.`;
