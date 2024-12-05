@@ -11,17 +11,20 @@ document.getElementById('calculateBtn').addEventListener('click', () => {
     }
 
     // Cálculo del interés simple
-    const earnedValue = (investment * rate * 1) / 100;
+    const earnedValue = (investment * rate * 1) / 100; // Simplemente un año (por defecto)
     const totalInvestment = investment + earnedValue;
 
     // Cálculo del interés compuesto
     let earnedCompoundValue, totalCompoundInvestment;
 
     if (timeUnit === "years") {
+        // Cálculo para años
         earnedCompoundValue = investment * (Math.pow(1 + rate / 100, timeInput) - 1);
         totalCompoundInvestment = investment + earnedCompoundValue;
     } else {
-        earnedCompoundValue = investment * (Math.pow(1 + rate / 100 / 12, timeInput) - 1);
+        // Cálculo para meses: ajustar tasa anual a mensual
+        const monthlyRate = rate / 12 / 100; // Tasa mensual en decimal
+        earnedCompoundValue = investment * (Math.pow(1 + monthlyRate, timeInput) - 1);
         totalCompoundInvestment = investment + earnedCompoundValue;
     }
 
@@ -32,13 +35,11 @@ document.getElementById('calculateBtn').addEventListener('click', () => {
     document.getElementById('totalCompoundInvestment').textContent = `$${totalCompoundInvestment.toFixed(2)}`;
 
     // Actualizar tooltips con información única
-   // Calculando el interés y el total (suponiendo que ya tienes las variables necesarias)
-document.querySelector('#earnedValue + .tooltip').textContent = 
-`Interés simple: Con una inversión de $${investment.toFixed(2)} al ${rate}% durante 1 año, ganarías $${earnedValue.toFixed(2)}.`;
+    document.querySelector('#earnedValue + .tooltip').textContent = 
+        `Interés simple: Con una inversión de $${investment.toFixed(2)} al ${rate}% durante 1 año, ganarías $${earnedValue.toFixed(2)}.`;
 
-document.querySelector('#totalInvestment + .tooltip').textContent = 
-`Total simple: La inversión inicial ($${investment.toFixed(2)}) más el interés ganado ($${earnedValue.toFixed(2)}) da un total de $${totalInvestment.toFixed(2)}.`;
-
+    document.querySelector('#totalInvestment + .tooltip').textContent = 
+        `Total simple: La inversión inicial ($${investment.toFixed(2)}) más el interés ganado ($${earnedValue.toFixed(2)}) da un total de $${totalInvestment.toFixed(2)}.`;
 
     document.querySelector('#earnedCompoundValue + .tooltip').textContent = 
         `Interés compuesto: Con una inversión de $${investment.toFixed(2)} al ${rate}% durante ${timeInput} ${timeUnit === 'years' ? 'año(s)' : 'mes(es)'}, ganarías $${earnedCompoundValue.toFixed(2)}.`;
@@ -107,3 +108,10 @@ function getRandomColor() {
     button.style.setProperty('--serpent-gradient', gradient);
   });
   
+
+  //Botom de redes sociales
+
+  document.getElementById("more-socials").addEventListener("click", function () {
+    const additionalIcons = document.getElementById("additional-icons");
+    additionalIcons.classList.toggle("active");
+});
