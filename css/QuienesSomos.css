@@ -69,62 +69,74 @@ main  {
     padding-top: 20px;
 }
 
-/* Botones flotantes de redes sociales */
+/* Redes sociales flotantes */
 .social-icons {
-    position: fixed; 
-    right: 10px; 
-    top: 40%; 
+    position: fixed;
+    right: 10px;
+    top: 40%;
     display: flex;
     flex-direction: column;
-    gap: 10px; 
-    z-index: 1000; 
+    gap: 5px; /* Espacio reducido entre los botones */
+    z-index: 1000;
 }
 
 /* Estilo base para los íconos redondos */
-.social-icons a {
+.social-icons a, .more-button {
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 50%; 
-    background-color: #3b5998; 
+    width: 45px; /* Botones más pequeños */
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    background-color: #3b5998; /* Color inicial para todos los botones (Facebook) */
     color: white;
     text-align: center;
-    font-size: 24px;
-    transition: background-color 0.3s;
+    font-size: 20px; /* Tamaño del ícono */
+    transition: all 0.3s;
+}
+/* Efecto hover: aumentar tamaño y cambiar color */
+.social-icons a:hover, .more-button:hover {
+    transform: scale(1.1); /* Aumentar el tamaño un 10% */
+}
+/* Efecto hover: cambiar al color específico de cada red */
+.social-icons a:hover.facebook {
+    background-color: #2d4373;
 }
 
-/* Cambiar el color cuando se pasa el cursor por encima */
-/* Efecto hover general */
-.social-icons a:hover {
-    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+.social-icons a:hover.instagram {
+    background-color: #bc2a8d;
 }
 
-/* Facebook */
-.facebook {
-    background-color: #3b5998; /* Color inicial de Facebook */
+.social-icons a:hover.whatsapp {
+    background-color: #1ebe57;
 }
 
-.facebook:hover {
-    background-color: #2d4373; /* Color de hover para Facebook */
+.social-icons a:hover.youtube {
+    background-color: #FF0000;
 }
 
-/* Instagram */
-.instagram {
-    background-color: #e4405f; /* Color inicial de Instagram */
+.social-icons a:hover.tiktok {
+    background-color: black;
 }
 
-.instagram:hover {
-    background-color: #bc2a8d; /* Color de hover para Instagram */
+/* Botón de más redes */
+.more-button {
+    background-color: #555;
 }
 
-/* WhatsApp */
-.whatsapp {
-    background-color: #25d366; /* Color inicial de WhatsApp */
+.more-button:hover {
+    background-color: #333;
 }
 
-.whatsapp:hover {
-    background-color: #1ebe57; /* Color de hover para WhatsApp */
+/* Redes sociales adicionales (ocultas inicialmente en pantallas grandes) */
+.additional-icons {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Mostrar redes adicionales cuando están activas */
+.additional-icons.active {
+    display: flex;
 }
 
 /* Animación de entrada */
@@ -191,11 +203,29 @@ main  {
     }
 
     .social-icons {
-        position: static; /* Colocar debajo de las tarjetas */
-        flex-direction: row; /* Íconos en fila */
+        position: static; /* Los íconos ya no son flotantes */
+        margin: 10px auto; /* Centrar el grupo de botones */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Tres íconos por fila */
+        gap: 5px; /* Reducir el espacio entre los botones */
         justify-content: center;
-        margin-top: 10px; /* Espacio superior para separación */
-        margin-bottom: 20px; /* Espacio inferior para separación */
+        align-items: center;
+    }
+
+    .social-icons a {
+        margin: 0 auto; /* Centrar los botones en cada celda */
+    }
+
+    /* Ocultar el botón de desplegar en pantallas pequeñas */
+    .more-button {
+        display: none;
+    }
+
+    /* Mostrar siempre todos los íconos en pantallas pequeñas */
+    .additional-icons {
+        display: flex;
+        flex-direction: row; /* Alineación en filas */
+        grid-column: span 3; /* Asegurar que se ajusten dentro del grid */
     }
 
     .social-icons a {
@@ -224,11 +254,29 @@ main  {
     }
 
     .social-icons {
-        position: static; /* Colocar debajo de las tarjetas */
-        flex-direction: row; /* Íconos en fila */
+        position: static; /* Los íconos ya no son flotantes */
+        margin: 10px auto; /* Centrar el grupo de botones */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Tres íconos por fila */
+        gap: 5px; /* Reducir el espacio entre los botones */
         justify-content: center;
-        margin-top: 10px; /* Espacio superior para separación */
-        margin-bottom: 20px; /* Espacio inferior para separación */
+        align-items: center;
+    }
+
+    .social-icons a {
+        margin: 0 auto; /* Centrar los botones en cada celda */
+    }
+
+    /* Ocultar el botón de desplegar en pantallas pequeñas */
+    .more-button {
+        display: none;
+    }
+
+    /* Mostrar siempre todos los íconos en pantallas pequeñas */
+    .additional-icons {
+        display: flex;
+        flex-direction: row; /* Alineación en filas */
+        grid-column: span 3; /* Asegurar que se ajusten dentro del grid */
     }
 
     .social-icons a {
@@ -255,15 +303,36 @@ main  {
     }
 
     .social-icons {
-        right: 10px; /* Mantener el posicionamiento fijo */
-        top: 40%; /* Alineado vertical */
+        position: static; /* Los íconos ya no son flotantes */
+        margin: 10px auto; /* Centrar el grupo de botones */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Tres íconos por fila */
+        gap: 5px; /* Reducir el espacio entre los botones */
+        justify-content: center;
+        align-items: center;
     }
 
     .social-icons a {
-        width: 45px; /* Iconos un poco más grandes */
-        height: 45px;
-        line-height: 45px;
-        font-size: 22px;
+        margin: 0 auto; /* Centrar los botones en cada celda */
+    }
+
+    /* Ocultar el botón de desplegar en pantallas pequeñas */
+    .more-button {
+        display: none;
+    }
+
+    /* Mostrar siempre todos los íconos en pantallas pequeñas */
+    .additional-icons {
+        display: flex;
+        flex-direction: row; /* Alineación en filas */
+        grid-column: span 3; /* Asegurar que se ajusten dentro del grid */
+    }
+
+    .social-icons a {
+        width: 40px; /* Iconos más pequeños */
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
     }
 
     .card {

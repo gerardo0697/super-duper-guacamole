@@ -18,56 +18,74 @@
     height: auto; /* Mantiene la proporción */
 }
 
-/* Social Icons */
+/* Redes sociales flotantes */
 .social-icons {
-    position: fixed; /* Mantener en posición fija por defecto */
-    right: 10px; /* Espacio desde el borde derecho de la pantalla */
-    top: 40%; /* Alineado verticalmente al centro */
+    position: fixed;
+    right: 10px;
+    top: 40%;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espacio entre los íconos */
-    z-index: 1000; /* Asegura que estén encima de otros elementos */
+    gap: 5px; /* Espacio reducido entre los botones */
+    z-index: 1000;
 }
 
-.social-icons a {
+/* Estilo base para los íconos redondos */
+.social-icons a, .more-button {
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 50%; /* Hacer los íconos redondos */
-    background-color: #3b5998; /* Color inicial (Facebook) */
+    width: 45px; /* Botones más pequeños */
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    background-color: #3b5998; /* Color inicial para todos los botones (Facebook) */
     color: white;
     text-align: center;
-    font-size: 24px;
-    transition: transform 0.3s, background-color 0.3s;
+    font-size: 20px; /* Tamaño del ícono */
+    transition: all 0.3s;
 }
-
-.social-icons a:hover {
-    transform: scale(1.1); /* Efecto de zoom */
+/* Efecto hover: aumentar tamaño y cambiar color */
+.social-icons a:hover, .more-button:hover {
+    transform: scale(1.1); /* Aumentar el tamaño un 10% */
 }
-
-.facebook {
-    background-color: #3b5998;
-}
-
-.facebook:hover {
+/* Efecto hover: cambiar al color específico de cada red */
+.social-icons a:hover.facebook {
     background-color: #2d4373;
 }
 
-.instagram {
-    background-color: #e4405f;
-}
-
-.instagram:hover {
+.social-icons a:hover.instagram {
     background-color: #bc2a8d;
 }
 
-.whatsapp {
-    background-color: #25d366;
+.social-icons a:hover.whatsapp {
+    background-color: #1ebe57;
 }
 
-.whatsapp:hover {
-    background-color: #1ebe57;
+.social-icons a:hover.youtube {
+    background-color: #FF0000;
+}
+
+.social-icons a:hover.tiktok {
+    background-color: black;
+}
+
+/* Botón de más redes */
+.more-button {
+    background-color: #555;
+}
+
+.more-button:hover {
+    background-color: #333;
+}
+
+/* Redes sociales adicionales (ocultas inicialmente en pantallas grandes) */
+.additional-icons {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Mostrar redes adicionales cuando están activas */
+.additional-icons.active {
+    display: flex;
 }
 
 /* Footer */

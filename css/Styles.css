@@ -92,62 +92,75 @@
 
   
 
-/* Botones flotantes de redes sociales */
+/* Redes sociales flotantes */
 .social-icons {
-    position: fixed; /* Mantener en posición fija por defecto */
-    right: 10px; /* Espacio desde el borde derecho de la pantalla */
-    top: 40%; /* Alineado verticalmente al centro */
+    position: fixed;
+    right: 10px;
+    top: 40%;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espacio entre los íconos */
-    z-index: 1000; /* Asegura que estén encima de otros elementos */
+    gap: 5px; /* Espacio reducido entre los botones */
+    z-index: 1000;
 }
 
 /* Estilo base para los íconos redondos */
-.social-icons a {
+.social-icons a, .more-button {
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 50%; /* Hacer los íconos redondos */
-    background-color: #3b5998; /* Color de fondo inicial (Facebook) */
+    width: 45px; /* Botones más pequeños */
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    background-color: #3b5998; /* Color inicial para todos los botones (Facebook) */
     color: white;
     text-align: center;
-    font-size: 24px;
-    transition: background-color 0.3s;
+    font-size: 20px; /* Tamaño del ícono */
+    transition: all 0.3s;
 }
-/* Efecto hover general */
-.social-icons a:hover {
-    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+/* Efecto hover: aumentar tamaño y cambiar color */
+.social-icons a:hover, .more-button:hover {
+    transform: scale(1.1); /* Aumentar el tamaño un 10% */
 }
-
-/* Facebook */
-.facebook {
-    background-color: #3b5998; /* Color inicial de Facebook */
-}
-
-.facebook:hover {
-    background-color: #2d4373; /* Color de hover para Facebook */
+/* Efecto hover: cambiar al color específico de cada red */
+.social-icons a:hover.facebook {
+    background-color: #2d4373;
 }
 
-/* Instagram */
-.instagram {
-    background-color: #e4405f; /* Color inicial de Instagram */
+.social-icons a:hover.instagram {
+    background-color: #bc2a8d;
 }
 
-.instagram:hover {
-    background-color: #bc2a8d; /* Color de hover para Instagram */
+.social-icons a:hover.whatsapp {
+    background-color: #1ebe57;
 }
 
-/* WhatsApp */
-.whatsapp {
-    background-color: #25d366; /* Color inicial de WhatsApp */
+.social-icons a:hover.youtube {
+    background-color: #FF0000;
 }
 
-.whatsapp:hover {
-    background-color: #1ebe57; /* Color de hover para WhatsApp */
+.social-icons a:hover.tiktok {
+    background-color: black;
 }
 
+/* Botón de más redes */
+.more-button {
+    background-color: #555;
+}
+
+.more-button:hover {
+    background-color: #333;
+}
+
+/* Redes sociales adicionales (ocultas inicialmente en pantallas grandes) */
+.additional-icons {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Mostrar redes adicionales cuando están activas */
+.additional-icons.active {
+    display: flex;
+}
 /* Grilla de las tarjetas */
 /*css del primer contenedor*/
 
@@ -298,11 +311,29 @@
     }
 
     .social-icons {
-        position: static; /* Colocar debajo de las tarjetas */
-        flex-direction: row; /* Íconos en fila */
+        position: static; /* Los íconos ya no son flotantes */
+        margin: 10px auto; /* Centrar el grupo de botones */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Tres íconos por fila */
+        gap: 5px; /* Reducir el espacio entre los botones */
         justify-content: center;
-        margin-top: 10px; /* Espacio superior para separación */
-        margin-bottom: 20px; /* Espacio inferior para separación */
+        align-items: center;
+    }
+
+    .social-icons a {
+        margin: 0 auto; /* Centrar los botones en cada celda */
+    }
+
+    /* Ocultar el botón de desplegar en pantallas pequeñas */
+    .more-button {
+        display: none;
+    }
+
+    /* Mostrar siempre todos los íconos en pantallas pequeñas */
+    .additional-icons {
+        display: flex;
+        flex-direction: row; /* Alineación en filas */
+        grid-column: span 3; /* Asegurar que se ajusten dentro del grid */
     }
 
     .social-icons a {
@@ -356,11 +387,29 @@
     }
 
     .social-icons {
-        position: static; /* Colocar debajo de las tarjetas */
-        flex-direction: row; /* Íconos en fila */
+        position: static; /* Los íconos ya no son flotantes */
+        margin: 10px auto; /* Centrar el grupo de botones */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Tres íconos por fila */
+        gap: 5px; /* Reducir el espacio entre los botones */
         justify-content: center;
-        margin-top: 10px; /* Espacio superior para separación */
-        margin-bottom: 20px; /* Espacio inferior para separación */
+        align-items: center;
+    }
+
+    .social-icons a {
+        margin: 0 auto; /* Centrar los botones en cada celda */
+    }
+
+    /* Ocultar el botón de desplegar en pantallas pequeñas */
+    .more-button {
+        display: none;
+    }
+
+    /* Mostrar siempre todos los íconos en pantallas pequeñas */
+    .additional-icons {
+        display: flex;
+        flex-direction: row; /* Alineación en filas */
+        grid-column: span 3; /* Asegurar que se ajusten dentro del grid */
     }
 
     .social-icons a {
@@ -462,6 +511,43 @@
 
     .custom-img-small {
         width: 70%; /* Ajustar el tamaño de la imagen en móviles */
+        margin-top: 10px !important;
+    }
+
+    .card img {
+        height: auto; /* Mantener proporción */
+        max-width: 100%; /* Asegura que la imagen no se desborde */
+    }
+    .custom-card-text1 {
+        font-size: 18px !important;
+    }
+
+
+}
+@media (min-width: 993px) and (max-width: 1279px) {
+    .navbar-brand img {
+        max-width: 140px; /* Logo para laptops/desktops medianos */
+    }
+    .cards-grid1 .col-12 {
+        margin-bottom: 5px; /* Espaciado entre tarjetas en pantallas pequeñas */
+        min-width: 250px;
+    }
+    .card-title1{
+        font-size: 18px; /* Tamaño de texto más pequeño */
+        
+        padding: none;
+        margin: none;
+    }
+    .card {
+        height: auto; /* Permitir que las tarjetas se ajusten automáticamente */
+        max-width: 100%; /* Asegura que las tarjetas no se desborden */
+        overflow: hidden; /* Ocultar cualquier contenido que sobresalga */
+        padding: 10px; /* Reducir el padding en móviles */
+    }
+
+    .custom-img-small {
+        width: 70%; /* Ajustar el tamaño de la imagen en móviles */
+        margin-top: 10px !important;
     }
 
     .card img {
@@ -498,6 +584,7 @@
 
     .custom-img-small {
         width: 70%; /* Ajustar el tamaño de la imagen en móviles */
+        margin-top: 10px  !important;
     }
 
     .card img {
@@ -534,6 +621,7 @@
 
     .custom-img-small {
         width: 70%; /* Ajustar el tamaño de la imagen en móviles */
+        margin-top: 10px !important;
     }
 
     .card img {
